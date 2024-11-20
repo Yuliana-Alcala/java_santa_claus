@@ -1,6 +1,6 @@
 package views;
 
-public class SantaView {
+public class SantaView extends View{
         //reciba el scaner del main
 
 }

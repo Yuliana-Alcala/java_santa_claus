@@ -3,7 +3,6 @@ package views;
 
 public class HomeView extends View{
 
-
        public static void index() {
 
               boolean programRuning = true;

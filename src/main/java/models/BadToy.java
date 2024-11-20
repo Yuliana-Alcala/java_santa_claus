@@ -1,5 +1,5 @@
 package models;
 
-public class BadToy {
+public class BadToy extends Toy{
 
 }

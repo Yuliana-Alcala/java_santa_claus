@@ -1,7 +1,12 @@
 package views;
 
+import controllers.ToyController;
+import dtos.GoodToyDto;
+;
+
 public class ElfoView extends View {
 
+    
     public static void index() {
         boolean programRuning = true;
         while(programRuning){
@@ -47,6 +52,7 @@ public class ElfoView extends View {
             System.out.println("Para niño");   
             System.out.println("1. Bueno");       
             System.out.println("2. Malo");  
+            System.out.println("3. salir"); 
             System.out.println("Seleccione una opción: ");  
             int option = scanner.nextInt();
 
@@ -56,6 +62,11 @@ public class ElfoView extends View {
                     break;  
                 case 2:    
                     System.out.println("2. Añadir juguetes niño malo");  
+                    break;
+
+                case 3:    
+                    System.out.println("3. salir"); 
+                    programRuning=false; 
                     break;
                                 
                 default:
@@ -68,14 +79,22 @@ public class ElfoView extends View {
     public static void postGoodToy() {
         System.out.println("Añadiendo juguetes para niño bueno");
         System.out.println("Ingrese el título");
-        String title = scanner.nextLine();
+        String title = scanner.next();
         System.out.println("Ingrese la marca");
-        String brand = scanner.nextLine();
+        String brand = scanner.next();
+        System.out.println("Ingrese la edad recomendada");
+        int recommendedAge = scanner.nextInt();
         System.out.println("Ingrese la categoría");
-        String category = scanner.nextLine();
+        String category = scanner.next();
+        
+        ToyController.postGoodToy(new GoodToyDto(title, brand, recommendedAge, category));
                 
     }
 
+    public static void addToyResponse(){
+        System.out.println("Juguete añadido con éxito");
+    }
+    
     public static void closeSession(){
         HomeView.index();
     }
