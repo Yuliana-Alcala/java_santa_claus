@@ -2,8 +2,7 @@ package views;
 
 import java.util.Scanner;
 
-public class ElfoView {
-        private static final Scanner scanner = new Scanner(System.in);
+public class ElfoView extends View {
 
     public static void index() {
         System.out.println("Sesión de Elfo: ");   

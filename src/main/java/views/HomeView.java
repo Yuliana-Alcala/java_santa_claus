@@ -2,9 +2,8 @@ package views;
 
 import java.util.Scanner;
 
-public class HomeView {
-       
-       private static final Scanner scanner = new Scanner(System.in);
+public class HomeView extends View{
+
 
        public static void index() {
               System.out.println("Iniciar sesión de trabajo como: ");   
