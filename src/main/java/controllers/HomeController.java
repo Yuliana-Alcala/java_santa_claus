@@ -1,5 +1,7 @@
 package controllers;
 
+import views.HomeView;
+
 public class HomeController {
 
 
@@ -8,7 +10,7 @@ public class HomeController {
     }
     
     public void index() {
-        System.out.println("Index method");        
+       HomeView.index();        
     }
 
 }
