@@ -4,8 +4,12 @@ public class Toy {
     protected String id;
     protected String title;
 
-    public Toy(String title){
-        
+    public Toy(int id, String title) {
+
+        this.title = title;
+    }
+
+    public Toy(String title) {
         this.title = title;
     }
 
@@ -13,8 +17,8 @@ public class Toy {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(int id) {
+        this.id = id + "";
     }
 
     public String getTitle() {
@@ -24,8 +28,5 @@ public class Toy {
     public void setTitle(String title) {
         this.title = title;
     }
-    
-
-
 
 }

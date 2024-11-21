@@ -19,9 +19,10 @@ public class GoodToyDatabase {
         return goodToys;
     }
 
-    public void save(GoodToy toy){        
+    public void save(GoodToy toy){  
+              
         goodToys.add(toy);
-        System.out.println(toy);
+        
         
     }
 

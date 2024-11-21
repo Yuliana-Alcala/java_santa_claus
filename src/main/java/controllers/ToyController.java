@@ -14,9 +14,11 @@ public class ToyController {
         this.repository = ToyRepositorySinglenton.getInstance();
     }
 
-    public void postGoodToy(GoodToyDto goodToyDto) {
+    public void  postGoodToy(GoodToyDto goodToyDto) {
         GoodToy toy = new GoodToy(goodToyDto.title(), goodToyDto.brand(), goodToyDto.recommendedAge(),goodToyDto.category());
-        repository.saveGoodToy(toy);
+        int id = repository.GetListGoodToy();        
+        toy.setId(id);
+        repository.saveGoodToy(toy);        
         ElfoView.addToyResponse();
         
     }

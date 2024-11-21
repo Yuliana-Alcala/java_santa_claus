@@ -88,9 +88,7 @@ public class ElfoView extends View {
         System.out.println("Ingrese la categoría");
         String category = scanner.next();
         
-        controller.postGoodToy(new GoodToyDto(title, brand, recommendedAge, category));
-        //GoodToyDto datos = new GoodToyDto(title, brand, recommendedAge, category);
-        //ToyController.postGoodToy(datos);
+        controller.postGoodToy(new GoodToyDto(title, brand, recommendedAge, category));    
                 
     }
 
