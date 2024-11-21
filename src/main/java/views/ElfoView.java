@@ -5,6 +5,7 @@ import dtos.GoodToyDto;
 ;
 
 public class ElfoView extends View {
+    private static final ToyController controller = new ToyController();
 
     
     public static void index() {
@@ -87,7 +88,7 @@ public class ElfoView extends View {
         System.out.println("Ingrese la categoría");
         String category = scanner.next();
         
-        ToyController.postGoodToy(new GoodToyDto(title, brand, recommendedAge, category));
+        controller.postGoodToy(new GoodToyDto(title, brand, recommendedAge, category));
         //GoodToyDto datos = new GoodToyDto(title, brand, recommendedAge, category);
         //ToyController.postGoodToy(datos);
                 

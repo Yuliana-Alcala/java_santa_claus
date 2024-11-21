@@ -3,8 +3,8 @@ package db;
 import java.util.List;
 
 public class ToysDB {
-    
-    private List<BadToy>badToy;
+    private List<GoodToy> goodToy;
+    private List<BadToy> badToy;
 
 
 }

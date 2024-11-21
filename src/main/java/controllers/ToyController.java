@@ -16,7 +16,7 @@ public class ToyController {
 
     public void postGoodToy(GoodToyDto goodToyDto) {
         GoodToy toy = new GoodToy(goodToyDto.title(), goodToyDto.brand(), goodToyDto.recommendedAge(),goodToyDto.category());
-        repository.saveGoodToy();
+        repository.saveGoodToy(toy);
         ElfoView.addToyResponse();
         
     }

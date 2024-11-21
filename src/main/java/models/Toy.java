@@ -4,8 +4,8 @@ public class Toy {
     protected String id;
     protected String title;
 
-    public Toy(String id, String title){
-        this.id = id;
+    public Toy(String title){
+        
         this.title = title;
     }
 

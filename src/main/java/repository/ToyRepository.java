@@ -1,9 +1,21 @@
 package repository;
 
+import db.GoodToyDatabase;
+import models.GoodToy;
+
 public class ToyRepository {
 
-    public void saveGoodToy(){
-        System.out.println("Estoy guardando los datos en ele repositorio");
+    private final GoodToyDatabase db;
+
+    public ToyRepository(){
+        this.db = new GoodToyDatabase();
+    }
+
+
+    public void saveGoodToy(GoodToy toy){
+        
+        db.save(toy);
+
     }
 
 }
