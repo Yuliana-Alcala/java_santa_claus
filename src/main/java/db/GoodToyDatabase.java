@@ -6,7 +6,7 @@ import java.util.List;
 
 import models.GoodToy;
 
-public class GoodToyDatabase {
+public class GoodToyDatabase implements IDatabase<GoodToy> {
 
  
     private List<GoodToy> goodToys;

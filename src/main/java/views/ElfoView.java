@@ -1,6 +1,7 @@
 package views;
 
 import controllers.ToyController;
+import dtos.BadToyDto;
 import dtos.GoodToyDto;
 ;
 
@@ -62,6 +63,7 @@ public class ElfoView extends View {
                     postGoodToy();
                     break;  
                 case 2:    
+                    postBadToy();
                     System.out.println("2. Añadir juguetes niño malo");  
                     break;
 
@@ -92,6 +94,17 @@ public class ElfoView extends View {
                 
     }
 
+
+    public static void postBadToy() {
+        System.out.println("Añadiendo juguetes para niño malo");
+        System.out.println("Ingrese el título");
+        String title = scanner.next();
+        System.out.println("Ingrese el contenido");
+        String content = scanner.next();
+                
+        controller.postBadToy(new BadToyDto(title,content));    
+                
+    }
     public static void addToyResponse(){
         System.out.println("Juguete añadido con éxito");
         index();
