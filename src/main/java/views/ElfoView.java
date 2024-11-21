@@ -88,13 +88,16 @@ public class ElfoView extends View {
         String category = scanner.next();
         
         ToyController.postGoodToy(new GoodToyDto(title, brand, recommendedAge, category));
+        //GoodToyDto datos = new GoodToyDto(title, brand, recommendedAge, category);
+        //ToyController.postGoodToy(datos);
                 
     }
 
     public static void addToyResponse(){
         System.out.println("Juguete añadido con éxito");
+        index();
     }
-    
+
     public static void closeSession(){
         HomeView.index();
     }

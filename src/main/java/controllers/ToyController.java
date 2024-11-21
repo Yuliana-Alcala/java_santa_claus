@@ -1,20 +1,22 @@
 package controllers;
 
 import dtos.GoodToyDto;
+import models.GoodToy;
 import repository.ToyRepository;
+import singlentons.ToyRepositorySinglenton;
 import views.ElfoView;
 
 public class ToyController {
 
     private final ToyRepository repository;
 
-    public ToyController (ToyRepository repository){
-        this.repository = repository;
+    public ToyController(){
+        this.repository = ToyRepositorySinglenton.getInstance();
     }
 
-    public static void postGoodToy(GoodToyDto goodToyDto) {
-        //hará algo con el repo y si todo a ido bien
-        //devolverá la respuesta
+    public void postGoodToy(GoodToyDto goodToyDto) {
+        GoodToy toy = new GoodToy(goodToyDto.title(), goodToyDto.brand(), goodToyDto.recommendedAge(),goodToyDto.category());
+        repository.saveGoodToy();
         ElfoView.addToyResponse();
         
     }
