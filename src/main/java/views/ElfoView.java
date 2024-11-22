@@ -22,7 +22,7 @@ public class ElfoView extends View {
             System.out.println("2. Ver todos los juguetes");  
             System.out.println("3. Eliminar juguetes");       
             System.out.println("4. Cerrar sesión"); 
-            System.out.println("Seleccione una opción: ");  
+            System.out.print("Seleccione una opción: ");  
             int option = scanner.nextInt();
 
             switch (option) {
@@ -37,7 +37,7 @@ public class ElfoView extends View {
                     System.out.println("3. Eliminar juguetes");       
                     break;
                 case 4:
-                    System.out.println("********** Sesión Elfo cerrada *************");
+                    
                     programRuning = false;
                     closeSession();                 
                     break;
@@ -58,7 +58,7 @@ public class ElfoView extends View {
             System.out.println("1. Bueno");       
             System.out.println("2. Malo");  
             System.out.println("3. salir"); 
-            System.out.println("Seleccione una opción: ");  
+            System.out.print("Seleccione una opción: ");  
             int option = scanner.nextInt();
 
             switch (option) {
@@ -67,7 +67,6 @@ public class ElfoView extends View {
                     break;  
                 case 2:    
                     postBadToy();
-                    System.out.println("2. Añadir juguetes niño malo");  
                     break;
 
                 case 3:    
@@ -83,14 +82,15 @@ public class ElfoView extends View {
     }
 
     public static void postGoodToy() {
+        System.out.println("**********************************");
         System.out.println("Añadiendo juguetes para niño bueno");
-        System.out.println("Ingrese el título");
+        System.out.print("Ingrese el título: ");
         String title = scanner.next();
-        System.out.println("Ingrese la marca");
+        System.out.print("Ingrese la marca: ");
         String brand = scanner.next();
-        System.out.println("Ingrese la edad recomendada");
+        System.out.print("Ingrese la edad: ");
         int recommendedAge = scanner.nextInt();
-        System.out.println("Ingrese la categoría");
+        System.out.print("Ingrese la categoría: ");
         String category = scanner.next();
         
         controller.postGoodToy(new GoodToyDto(title, brand, recommendedAge, category));    
@@ -99,10 +99,11 @@ public class ElfoView extends View {
 
 
     public static void postBadToy() {
-        System.out.println("Añadiendo juguetes para niño malo");
-        System.out.println("Ingrese el título");
+        System.out.println("**********************************");
+        System.out.println("Añadiendo juguetes para niño malo: ");
+        System.out.print("Ingrese el título");
         String title = scanner.next();
-        System.out.println("Ingrese el contenido");
+        System.out.print("Ingrese el contenido: ");
         String content = scanner.next();
                 
         controller.postBadToy(new BadToyDto(title,content));    
@@ -110,6 +111,7 @@ public class ElfoView extends View {
     }
 
     public static void addToyResponse(){
+        System.out.println("**********************************");
         System.out.println("Juguete añadido con éxito");
         index();
     }
@@ -121,13 +123,13 @@ public class ElfoView extends View {
 
 
     public static void displayToys(List<GoodToy> goodToys, List<BadToy> badToys) {
-        
+        System.out.println("**********************************");
         System.out.println("Juguetes Buenos:");
         for (GoodToy toy : goodToys) {
             System.out.println(toy);
         }
 
-        
+        System.out.println("**********************************");
         System.out.println("Juguetes Malos:");
         for (BadToy toy : badToys) {
             System.out.println(toy);
@@ -141,11 +143,10 @@ public class ElfoView extends View {
 
     public static void deleteToy() {
         //mostrar las 2 listas
-       
+        System.out.println("**********************************");
         System.out.println("Ingrese el identificador a eliminar");
         String id = scanner.next();
         if(id.contains("B")) {
-            System.out.println("id es bueno " + id);
             controller.deleteGoodToy(id);
 
         }            
@@ -157,6 +158,9 @@ public class ElfoView extends View {
     }
 
     public static void closeSession(){
+        System.out.println("********************************************");
+        System.out.println("********** Sesión Elfo cerrada *************");
+        System.out.println("********************************************");
         HomeView.index();
     }
 

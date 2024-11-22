@@ -31,6 +31,12 @@ public class GoodToy extends Toy{
 
     @Override
     public String toString() {
-        return "GoodToy{id='" + id + "',Título='" + title + "',Marca='" + brand + "', Edad Recomendada = '" + age + "', categoría=" + category + "}";
+        return 
+        "  Id = '" + id + "',\n" +
+        "  Título = '" + title + "',\n" +
+        "  Marca = '" + brand + "',\n" +
+        "  Edad Recomendada = '" + age + "',\n" +
+        "  Categoría = " + category + "\n" 
+        ;
     }
 }

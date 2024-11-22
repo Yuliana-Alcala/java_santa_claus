@@ -12,7 +12,7 @@ public class HomeView extends View{
                      System.out.println("1. Elfo");       
                      System.out.println("2. Santa");  
                      System.out.println("3. Salir"); 
-                     System.out.println("Seleccione una opción: ");  
+                     System.out.print("Seleccione una opción: ");  
                      int option = scanner.nextInt();
 
                      

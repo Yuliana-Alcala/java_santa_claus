@@ -65,7 +65,7 @@ public class ToyController {
     }
    
     public void deleteGoodToy(String id) {
-        System.out.println("id que llegó al controll "+ id);
+        
         //repository.setDB("good_toy");
         repository.deleteGoodToy(id);
             

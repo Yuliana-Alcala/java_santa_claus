@@ -18,7 +18,7 @@ public class SantaView extends View {
                         System.out.println("2. Ver lista de juguetes niños malos");
                         System.out.println("3. Guardar lista de todos los juguetes (.csv)");
                         System.out.println("4. Cerrar sesión");
-                        System.out.println("Seleccione una opción: ");
+                        System.out.print("Seleccione una opción: ");
                         int option = scanner.nextInt();
 
                         switch (option) {
@@ -34,7 +34,7 @@ public class SantaView extends View {
                                         System.out.println("3. Guardar lista de todos los juguetes (.csv)s");
                                         break;
                                 case 4:
-                                        System.out.println("********** Sesión Santa cerrada *************");
+                                        
                                         programRuning = false;
                                         closeSession();
                                         break;
@@ -69,11 +69,11 @@ public class SantaView extends View {
 
         }
 
-        
-
-        
-
+         
         public static void closeSession() {
+                System.out.println("*********************************************");
+                System.out.println("********** Sesión Santa cerrada *************");
+                System.out.println("*********************************************");
                 HomeView.index();
         }
 
