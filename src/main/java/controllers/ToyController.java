@@ -46,6 +46,16 @@ public class ToyController {
         return repository.getGoodToys();
     }
 
+    public List<BadToy> getBadToys(){
+        repository.setDB("bad_toy");   
+        
+        List<BadToy> badToys = repository.getBadToys();
+        for(BadToy badToy: badToys){
+            System.out.println(badToy.getTitle());
+        }
+        return repository.getBadToys();
+    }
+
     public void getAllToys() {
         
         List<GoodToy> goodToys = repository.getGoodToys();

@@ -23,11 +23,11 @@ public class SantaView extends View {
 
                         switch (option) {
                                 case 1:
-                                        System.out.println("2. lista niños buenos");
-                                        showGodToys();
+                                        
+                                        showGoodToys();
                                         break;
                                 case 2:
-                                        System.out.println("2. lista niños malos");
+                                        showBadToys();
                                         break;
                                 case 3:
 
@@ -47,20 +47,31 @@ public class SantaView extends View {
 
         }
 
-        public static void showGodToys() {
+        public static void showGoodToys() {
 
-                controller.getGoodToys();
-
-        }
-
-        public static void displayToys(List<GoodToy> goodToys) {
-
-                System.out.println("Juguetes Buenos:");
+                List<GoodToy> goodToys = controller.getGoodToys();
+                System.out.println("*********************************");
+                System.out.println("Listado de juguetes niños buenos:");
                 for (GoodToy toy : goodToys) {
                         System.out.println(toy);
                 }
 
         }
+
+        public static void showBadToys() {
+
+                List<BadToy> badToys = controller.getBadToys();
+                System.out.println("*********************************");
+                System.out.println("Listado de juguetes niños malos:");
+                for (BadToy toy : badToys) {
+                        System.out.println(toy);
+                }
+
+        }
+
+        
+
+        
 
         public static void closeSession() {
                 HomeView.index();
