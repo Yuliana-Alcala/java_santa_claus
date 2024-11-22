@@ -1,8 +1,12 @@
 package views;
 
+import java.util.List;
+
 import controllers.ToyController;
 import dtos.BadToyDto;
 import dtos.GoodToyDto;
+import models.BadToy;
+import models.GoodToy;
 ;
 
 public class ElfoView extends View {
@@ -25,8 +29,8 @@ public class ElfoView extends View {
                 case 1:
                     selectChild(); 
                     break;  
-                case 2:    
-                    System.out.println("2. Ver todos los juguetes");  
+                case 2:
+                    showAllToys();                     
                     break;
                 case 3:
                     System.out.println("3. Eliminar juguetes");       
@@ -109,6 +113,31 @@ public class ElfoView extends View {
         System.out.println("Juguete añadido con éxito");
         index();
     }
+
+    public static void showAllToys(){
+        controller.getAllToys();
+    }
+
+
+
+    public static void displayToys(List<GoodToy> goodToys, List<BadToy> badToys) {
+        System.out.println("Lista de todos los juguetes");
+        System.out.println("Juguetes Buenos:");
+        for (GoodToy toy : goodToys) {
+            System.out.println(toy);
+        }
+
+        System.out.println("Juguetes Malos:");
+        for (BadToy toy : badToys) {
+            System.out.println(toy);
+        }
+    }
+
+    public static void showGodToys(){
+        controller.getGoodToys();
+    }
+
+
 
     public static void closeSession(){
         HomeView.index();

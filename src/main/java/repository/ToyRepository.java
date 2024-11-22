@@ -1,6 +1,8 @@
 package repository;
 
 import java.util.List;
+
+
 import db.IDatabase;
 import models.BadToy;
 import models.GoodToy;
@@ -37,29 +39,26 @@ public class ToyRepository {
 
     @SuppressWarnings("unchecked")
     public void saveBadToy(BadToy toy) {
-        
+
         List<BadToy> toys = db.geToys();
         int nextId = toys.size() + 1;        
         toy.setId(nextId); 
         db.save(toy);
     }
 
-    @SuppressWarnings("unchecked")
-    public int getListGoodToy() {
-       
-        List<GoodToy> toys = db.geToys(); 
-        for (GoodToy toy : toys) {
-            System.out.println(toy); 
-        }
-     
-        return (toys.size() + 1); 
+  
+    public List<GoodToy> getGoodToys(){
+        return GoodToyDatabaseSinglenton.getInstance().geToys(); 
+
+        
     }
 
-    @SuppressWarnings("unchecked")
-    public int getListBadToy() {
-        List<BadToy> toys = db.geToys(); 
+ 
+    public List<BadToy> getBadToys(){
+        return BadToyDatabaseSinglenton.getInstance().geToys();
         
-        return toys.size() + 1; 
-    }
+    
+
+
 
 }

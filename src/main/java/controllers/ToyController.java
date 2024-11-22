@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import dtos.BadToyDto;
 import dtos.GoodToyDto;
 import models.BadToy;
@@ -18,29 +20,39 @@ public class ToyController {
 
     public void postGoodToy(GoodToyDto goodToyDto) {
         GoodToy toy = new GoodToy(goodToyDto.title(), goodToyDto.brand(), goodToyDto.recommendedAge(),goodToyDto.category());
-        repository.setDB("good_toy");
-        
-       // int id = repository.getListGoodToy();  
-        //System.out.println("id es: " +id);      
-        //toy.setId(id);        
+        repository.setDB("good_toy");               
         repository.saveGoodToy(toy);  
-        System.out.println(toy);      
+              
         ElfoView.addToyResponse();
         
     }
 
     public void postBadToy(BadToyDto badToyDto ) {
         BadToy toy = new BadToy(badToyDto.title(), badToyDto.content());
-        repository.setDB("bad_toy");
-        int id = repository.getListBadToy();
-        toy.setId(id);
-        
+        repository.setDB("bad_toy");        
         repository.saveBadToy(toy);
-        System.out.println(toy); 
+   
         ElfoView.addToyResponse();
         
     }
+    public List<GoodToy> getGoodToys(){
+        repository.setDB("good_toy");   
+        
+        List<GoodToy> goodToys = repository.getGoodToys();
+        for(GoodToy goodToy: goodToys){
+            System.out.println(goodToy.getTitle());
+        }
+        return repository.getGoodToys();
+    }
 
+    public void getAllToys() {
+        
+        List<GoodToy> goodToys = repository.getGoodToys();
+        List<BadToy> badToys = repository.getBadToys();
+        
+        ElfoView.displayToys(goodToys, badToys);
+    }
+   
    
 
 }
