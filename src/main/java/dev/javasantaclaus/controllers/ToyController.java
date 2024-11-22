@@ -1,14 +1,14 @@
-package controllers;
+package dev.javasantaclaus.controllers;
 
 import java.util.List;
 
-import dtos.BadToyDto;
-import dtos.GoodToyDto;
-import models.BadToy;
-import models.GoodToy;
-import repository.ToyRepository;
-import singlentons.ToyRepositorySinglenton;
-import views.ElfoView;
+import dev.javasantaclaus.dtos.BadToyDto;
+import dev.javasantaclaus.dtos.GoodToyDto;
+import dev.javasantaclaus.models.BadToy;
+import dev.javasantaclaus.models.GoodToy;
+import dev.javasantaclaus.repository.ToyRepository;
+import dev.javasantaclaus.singlentons.ToyRepositorySinglenton;
+import dev.javasantaclaus.views.ElfoView;
 
 public class ToyController {
 

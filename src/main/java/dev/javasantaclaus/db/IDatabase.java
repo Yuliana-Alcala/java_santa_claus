@@ -1,4 +1,4 @@
-package db;
+package dev.javasantaclaus.db;
 
 import java.util.List;
 

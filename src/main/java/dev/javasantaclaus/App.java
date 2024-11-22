@@ -1,6 +1,6 @@
 package dev.javasantaclaus;
 
-import controllers.HomeController;
+import dev.javasantaclaus.controllers.HomeController;
 
 /**
  * Hello world!

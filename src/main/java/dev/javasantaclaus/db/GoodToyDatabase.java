@@ -1,10 +1,10 @@
-package db;
+package dev.javasantaclaus.db;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import models.GoodToy;
+import dev.javasantaclaus.models.GoodToy;
 
 public class GoodToyDatabase implements IDatabase<GoodToy> {
 

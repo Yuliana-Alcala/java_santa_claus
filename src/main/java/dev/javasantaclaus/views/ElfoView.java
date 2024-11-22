@@ -1,12 +1,12 @@
-package views;
+package dev.javasantaclaus.views;
 
 import java.util.List;
 
-import controllers.ToyController;
-import dtos.BadToyDto;
-import dtos.GoodToyDto;
-import models.BadToy;
-import models.GoodToy;
+import dev.javasantaclaus.controllers.ToyController;
+import dev.javasantaclaus.dtos.BadToyDto;
+import dev.javasantaclaus.dtos.GoodToyDto;
+import dev.javasantaclaus.models.BadToy;
+import dev.javasantaclaus.models.GoodToy;
 
 
 public class ElfoView extends View {
@@ -36,8 +36,7 @@ public class ElfoView extends View {
                     deleteToy();
                     System.out.println("3. Eliminar juguetes");       
                     break;
-                case 4:
-                    
+                case 4:                    
                     programRuning = false;
                     closeSession();                 
                     break;
@@ -70,7 +69,6 @@ public class ElfoView extends View {
                     break;
 
                 case 3:    
-                    System.out.println("3. salir"); 
                     programRuning=false; 
                     break;
                                 
@@ -101,7 +99,7 @@ public class ElfoView extends View {
     public static void postBadToy() {
         System.out.println("**********************************");
         System.out.println("Añadiendo juguetes para niño malo: ");
-        System.out.print("Ingrese el título");
+        System.out.print("Ingrese el título: ");
         String title = scanner.next();
         System.out.print("Ingrese el contenido: ");
         String content = scanner.next();
@@ -143,7 +141,7 @@ public class ElfoView extends View {
 
     public static void deleteToy() {
         //mostrar las 2 listas
-        System.out.println("**********************************");
+        System.out.println("***********************************");
         System.out.println("Ingrese el identificador a eliminar");
         String id = scanner.next();
         if(id.contains("B")) {

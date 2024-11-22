@@ -1,4 +1,4 @@
-package views;
+package dev.javasantaclaus.views;
 
 import java.util.Scanner;
 

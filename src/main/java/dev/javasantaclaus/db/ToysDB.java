@@ -1,9 +1,9 @@
-package db;
+package dev.javasantaclaus.db;
 
 import java.util.List;
 
-import models.BadToy;
-import models.GoodToy;
+import dev.javasantaclaus.models.BadToy;
+import dev.javasantaclaus.models.GoodToy;
 
 
 @SuppressWarnings("unused")

@@ -1,10 +1,10 @@
-package views;
+package dev.javasantaclaus.views;
 
 import java.util.List;
 
-import controllers.ToyController;
-import models.BadToy;
-import models.GoodToy;
+import dev.javasantaclaus.controllers.ToyController;
+import dev.javasantaclaus.models.BadToy;
+import dev.javasantaclaus.models.GoodToy;
 
 public class SantaView extends View {
         private static final ToyController controller = new ToyController();

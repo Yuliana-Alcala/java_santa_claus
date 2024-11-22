@@ -1,12 +1,12 @@
-package repository;
+package dev.javasantaclaus.repository;
 
 import java.util.List;
 
-import db.IDatabase;
-import models.BadToy;
-import models.GoodToy;
-import singlentons.BadToyDatabaseSinglenton;
-import singlentons.GoodToyDatabaseSinglenton;
+import dev.javasantaclaus.db.IDatabase;
+import dev.javasantaclaus.models.BadToy;
+import dev.javasantaclaus.models.GoodToy;
+import dev.javasantaclaus.singlentons.BadToyDatabaseSinglenton;
+import dev.javasantaclaus.singlentons.GoodToyDatabaseSinglenton;
 
 @SuppressWarnings("rawtypes")
 public class ToyRepository {

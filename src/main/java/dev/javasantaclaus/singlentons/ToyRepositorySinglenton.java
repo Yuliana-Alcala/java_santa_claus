@@ -1,6 +1,6 @@
-package singlentons;
+package dev.javasantaclaus.singlentons;
 
-import repository.ToyRepository;
+import dev.javasantaclaus.repository.ToyRepository;
 
 public class ToyRepositorySinglenton {
     private static final ToyRepository INSTANCE = new ToyRepository();

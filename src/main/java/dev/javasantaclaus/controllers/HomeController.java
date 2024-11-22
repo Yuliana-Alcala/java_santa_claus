@@ -1,6 +1,6 @@
-package controllers;
+package dev.javasantaclaus.controllers;
 
-import views.HomeView;
+import dev.javasantaclaus.views.HomeView;
 
 public class HomeController {
 

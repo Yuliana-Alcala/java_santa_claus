@@ -1,4 +1,4 @@
-package models;
+package dev.javasantaclaus.models;
 
 public class BadToy extends Toy {
 

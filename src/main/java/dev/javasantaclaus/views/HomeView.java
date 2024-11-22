@@ -1,4 +1,4 @@
-package views;
+package dev.javasantaclaus.views;
 
 
 public class HomeView extends View{

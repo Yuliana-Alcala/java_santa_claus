@@ -1,10 +1,10 @@
-package db;
+package dev.javasantaclaus.db;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import dev.javasantaclaus.models.BadToy;
 
-import models.BadToy;
 
 
 public class BadToyDatabase implements IDatabase<BadToy> {
@@ -20,8 +20,14 @@ public class BadToyDatabase implements IDatabase<BadToy> {
 
     public void save(BadToy toy){  
               
-        badToys.add(toy);
+        badToys.add(toy);       
         
+    }
+
+    public void delete(BadToy toy) {
+        System.out.println("juguete que llego");
+        
+        badToys.remove(toy);        
         
     }
 

@@ -1,6 +1,6 @@
-package singlentons;
+package dev.javasantaclaus.singlentons;
 
-import db.BadToyDatabase;
+import dev.javasantaclaus.db.BadToyDatabase;
 
 
 public class BadToyDatabaseSinglenton {
