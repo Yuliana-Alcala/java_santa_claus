@@ -58,7 +58,7 @@ public class ToyRepository {
         return BadToyDatabaseSinglenton.getInstance().geToys();
         
     
-
+    }
 
 
 }

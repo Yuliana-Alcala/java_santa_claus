@@ -7,7 +7,7 @@ import dtos.BadToyDto;
 import dtos.GoodToyDto;
 import models.BadToy;
 import models.GoodToy;
-;
+
 
 public class ElfoView extends View {
     private static final ToyController controller = new ToyController();
@@ -30,7 +30,7 @@ public class ElfoView extends View {
                     selectChild(); 
                     break;  
                 case 2:
-                    showAllToys();                     
+                    showAllToys();                      
                     break;
                 case 3:
                     System.out.println("3. Eliminar juguetes");       
@@ -45,9 +45,7 @@ public class ElfoView extends View {
                     System.out.println("La opción: "+ option + " es incorrecta");
                     break;
             }
-        }
-      
-            
+        }           
             
     }
 
@@ -109,6 +107,7 @@ public class ElfoView extends View {
         controller.postBadToy(new BadToyDto(title,content));    
                 
     }
+
     public static void addToyResponse(){
         System.out.println("Juguete añadido con éxito");
         index();
@@ -121,12 +120,13 @@ public class ElfoView extends View {
 
 
     public static void displayToys(List<GoodToy> goodToys, List<BadToy> badToys) {
-        System.out.println("Lista de todos los juguetes");
+        
         System.out.println("Juguetes Buenos:");
         for (GoodToy toy : goodToys) {
             System.out.println(toy);
         }
 
+        
         System.out.println("Juguetes Malos:");
         for (BadToy toy : badToys) {
             System.out.println(toy);

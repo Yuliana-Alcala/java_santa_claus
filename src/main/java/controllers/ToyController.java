@@ -35,6 +35,7 @@ public class ToyController {
         ElfoView.addToyResponse();
         
     }
+    
     public List<GoodToy> getGoodToys(){
         repository.setDB("good_toy");   
         
