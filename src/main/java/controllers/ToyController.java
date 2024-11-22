@@ -35,7 +35,7 @@ public class ToyController {
         ElfoView.addToyResponse();
         
     }
-    
+
     public List<GoodToy> getGoodToys(){
         repository.setDB("good_toy");   
         
@@ -54,6 +54,18 @@ public class ToyController {
         ElfoView.displayToys(goodToys, badToys);
     }
    
+    public void deleteGoodToy(String id) {
+        System.out.println("id que llegó al controll "+ id);
+        //repository.setDB("good_toy");
+        repository.deleteGoodToy(id);
+            
+    }
+
+    public void deleteBadToy(String id) {
+        repository.setDB("bad_toy");
+        repository.deleteBadToy(id);
+        
+    }
    
 
 }

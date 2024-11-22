@@ -60,5 +60,42 @@ public class ToyRepository {
     
     }
 
+   
+    public void deleteGoodToy(String id) {
+
+        System.out.println("id que llego al repository "+ id);
+               
+        List<GoodToy> goodToys = getGoodToys();
+        /*System.out.println("Contenido de la lista de GoodToys:");
+        for (int i = 0; i < goodToys.size(); i++) {
+            System.out.println(goodToys.get(i));
+        }*/
+       
+        for (GoodToy toy : goodToys) {
+            System.out.println("Comparando ID recibido: " + id + " con ID del juguete: " + toy.getId());
+
+            if (toy.getId() == id) { 
+                System.out.println("¡Encontrado!");
+
+                //db.delete(toy); 
+                //System.out.println("El juguete con ID " + id + " ha sido eliminado.");
+               // return; 
+            }
+            else{
+                System.out.println("No encontrado");
+            }
+        }     
+        
+    }
+
+    @SuppressWarnings("unchecked")
+    public void deleteBadToy(String id) {
+        List<BadToy> toys = db.geToys();
+        for (BadToy toy : toys) {
+            if (toy.getId()== id)
+                db.delete(toys);
+        }         
+    }
+
 
 }

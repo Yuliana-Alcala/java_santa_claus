@@ -33,6 +33,7 @@ public class ElfoView extends View {
                     showAllToys();                      
                     break;
                 case 3:
+                    deleteToy();
                     System.out.println("3. Eliminar juguetes");       
                     break;
                 case 4:
@@ -138,6 +139,22 @@ public class ElfoView extends View {
     }
 
 
+    public static void deleteToy() {
+        //mostrar las 2 listas
+       
+        System.out.println("Ingrese el identificador a eliminar");
+        String id = scanner.next();
+        if(id.contains("B")) {
+            System.out.println("id es bueno " + id);
+            controller.deleteGoodToy(id);
+
+        }            
+        else{
+            controller.deleteBadToy(id);
+        }
+            
+        
+    }
 
     public static void closeSession(){
         HomeView.index();

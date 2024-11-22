@@ -27,6 +27,13 @@ public class GoodToyDatabase implements IDatabase<GoodToy> {
         
     }
 
+    public void delete(GoodToy toy) {
+        System.out.println("juguete que llego");
+        
+        goodToys.remove(toy);        
+        
+    }
+
     private void initDB() {
         this.goodToys = new ArrayList<>(Arrays.asList(new GoodToy("juguete primero", "lego", 10, "construccion")));
         
