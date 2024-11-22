@@ -21,7 +21,7 @@ public class HomeView extends View{
                                    ElfoView.index();
                                    break;
                             case 2:
-                                   System.out.println("2. Santa"); 
+                                   SantaView.index();
                                    break;
                             case 3:
                                    System.out.println("********** Feliz Navidad **********");
