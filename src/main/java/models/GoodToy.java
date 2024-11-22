@@ -25,6 +25,7 @@ public class GoodToy extends Toy{
     
     @Override
     public void setId(int id) {
+        System.out.println("id que llega "+id);
 
         this.id = "B" + id;
        

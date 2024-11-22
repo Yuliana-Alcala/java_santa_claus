@@ -4,8 +4,9 @@ import java.util.List;
 import db.IDatabase;
 import models.BadToy;
 import models.GoodToy;
-import db.GoodToyDatabase;
-import db.BadToyDatabase;
+import singlentons.BadToyDatabaseSinglenton;
+import singlentons.GoodToyDatabaseSinglenton;
+
 
 
 @SuppressWarnings("rawtypes")
@@ -14,33 +15,50 @@ public class ToyRepository {
     private IDatabase db;
 
     public void setDB(String type) {
-        // setter injection
-        if (type == "good_toy")
-            this.db = new GoodToyDatabase();
-
-        if (type == "bad_toy")
-            this.db = new BadToyDatabase();
+        if ("good_toy".equals(type)) {
+            this.db = GoodToyDatabaseSinglenton.getInstance();
+            
+          
+        } else if ("bad_toy".equals(type)) {
+            this.db = BadToyDatabaseSinglenton.getInstance();
+        }
     }
+
+    
 
     @SuppressWarnings("unchecked")
     public void saveGoodToy(GoodToy toy) {
+
+        List<GoodToy> toys = db.geToys(); 
+        int nextId = toys.size() + 1;        
+        toy.setId(nextId);    
         db.save(toy);
     }
 
     @SuppressWarnings("unchecked")
     public void saveBadToy(BadToy toy) {
+        
+        List<BadToy> toys = db.geToys();
+        int nextId = toys.size() + 1;        
+        toy.setId(nextId); 
         db.save(toy);
     }
 
     @SuppressWarnings("unchecked")
     public int getListGoodToy() {
+       
         List<GoodToy> toys = db.geToys(); 
-        return toys.size() + 1; 
+        for (GoodToy toy : toys) {
+            System.out.println(toy); 
+        }
+     
+        return (toys.size() + 1); 
     }
 
     @SuppressWarnings("unchecked")
     public int getListBadToy() {
         List<BadToy> toys = db.geToys(); 
+        
         return toys.size() + 1; 
     }
 

@@ -26,7 +26,7 @@ public class BadToy extends Toy{
     @Override
     public void setId(int id) {
 
-        this.id = "B" + id;
+        this.id = "M" + id;
        
     }
 
