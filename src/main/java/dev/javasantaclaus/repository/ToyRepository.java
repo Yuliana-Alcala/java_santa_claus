@@ -84,28 +84,26 @@ public class ToyRepository {
     public void saveCSV(){
         List<GoodToy> goodToys = getGoodToys();
         List<BadToy> badToys = getBadToys();
-        String filePath = "/home/yua/CURSOS/BACKEND-BOOTCAMP/backend/java/projects/santaclaus/toys.csv"; // Cambia la ruta si es necesario
+        String filePath = "/home/yua/CURSOS/BACKEND-BOOTCAMP/backend/java/projects/santaclaus/toys.csv"; 
         
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            // Escribir encabezado para juguetes buenos
-            writer.write("Tipo,Nombre,Marca,Edad Recomendada,Categoría\n");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {           
 
-            // Escribir juguetes buenos
+            writer.write("JUGUETES BUENOS\n");
+            writer.write("TÍTULO,MARCA,EDAD RECOMENDADA,CATEGORÍA\n");
             for (GoodToy goodToy : goodToys) {
-                writer.write(String.format("Bueno,%s,%s,%d,%s\n",
+                writer.write(String.format("%s,%s,%d,%s\n",
                         goodToy.getTitle(),
                         goodToy.getBrand(),
                         goodToy.getAge(),
                         goodToy.getCategory()));
             }
 
-            // Escribir encabezado para juguetes malos
-            writer.write("Tipo,Nombre,Contenido\n");
-
+            writer.write("\n\n");
+            writer.write("JUGUETES MALOS\n");
+            writer.write("TÍTULO,CONTENIDO\n");
             
-            //Escribir juguetes malos
             for (BadToy badToy : badToys) {
-                writer.write(String.format("Malo,%s,%s\n",
+                writer.write(String.format("%s,%s\n",
                         badToy.getTitle(),
                         badToy.getContent()));
             }
@@ -115,9 +113,6 @@ public class ToyRepository {
         } catch (IOException e) {
             System.err.println("Error al guardar el archivo CSV: " + e.getMessage());
         }
-      
-
-
     }
 
     @SuppressWarnings("unchecked")
