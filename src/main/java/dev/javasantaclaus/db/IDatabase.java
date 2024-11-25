@@ -8,6 +8,5 @@ public interface IDatabase<E> {
     public void delete(E entity);
     List<E> geToys();
 
-    public void saveAllToyCSV(E entity);
 
 }

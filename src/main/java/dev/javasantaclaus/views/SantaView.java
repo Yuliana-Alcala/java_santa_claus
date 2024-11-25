@@ -71,9 +71,7 @@ public class SantaView extends View {
 
         
         
-        public static void saveAllToyCSV(){
-                System.out.println("Guardando en CSV");
-               
+        public static void saveAllToyCSV(){                             
                 controller.saveCSV();
         }
 

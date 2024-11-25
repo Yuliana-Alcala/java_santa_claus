@@ -1,8 +1,10 @@
 JUGUETES BUENOS
-TÍTULO,MARCA,EDAD RECOMENDADA,CATEGORÍA,CONTENIDO
+TÍTULO,MARCA,EDAD RECOMENDADA,CATEGORÍA
 juguete primero,lego,10,construccion
+barbie,mattel,5,muñecas
 
 
 JUGUETES MALOS
 TÍTULO,CONTENIDO
 juguete primero,lego
+ken,ken2

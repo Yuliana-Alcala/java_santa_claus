@@ -82,7 +82,7 @@ public class ToyRepository {
 
 
     public void saveCSV(){
-        List<GoodToy> goodToys = getGoodToys();
+        List<GoodToy> goodToys =  getGoodToys();
         List<BadToy> badToys = getBadToys();
         String filePath = "/home/yua/CURSOS/BACKEND-BOOTCAMP/backend/java/projects/santaclaus/toys.csv"; 
         
