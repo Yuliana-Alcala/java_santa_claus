@@ -76,6 +76,12 @@ public class ToyController {
         repository.deleteBadToy(id);
         
     }
+
+    public void saveCSV(){
+        System.out.println("controller");
+        repository.saveCSV();
+
+    }
    
 
 }

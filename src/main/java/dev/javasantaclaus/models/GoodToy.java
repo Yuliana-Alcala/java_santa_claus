@@ -39,4 +39,13 @@ public class GoodToy extends Toy{
         "  Categoría = " + category + "\n" 
         ;
     }
+    public String getBrand() {
+        return brand;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String getCategory() {
+        return category;
+    }
 }

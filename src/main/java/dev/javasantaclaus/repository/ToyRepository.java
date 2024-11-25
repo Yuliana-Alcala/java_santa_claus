@@ -1,5 +1,8 @@
 package dev.javasantaclaus.repository;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 import dev.javasantaclaus.db.IDatabase;
@@ -73,6 +76,47 @@ public class ToyRepository {
                 System.out.println("No encontrado");
             }
         }
+
+    }
+
+
+
+    public void saveCSV(){
+        List<GoodToy> goodToys = getGoodToys();
+        List<BadToy> badToys = getBadToys();
+        String filePath = "/home/yua/CURSOS/BACKEND-BOOTCAMP/backend/java/projects/santaclaus/toys.csv"; // Cambia la ruta si es necesario
+        
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
+            // Escribir encabezado para juguetes buenos
+            writer.write("Tipo,Nombre,Marca,Edad Recomendada,Categoría\n");
+
+            // Escribir juguetes buenos
+            for (GoodToy goodToy : goodToys) {
+                writer.write(String.format("Bueno,%s,%s,%d,%s\n",
+                        goodToy.getTitle(),
+                        goodToy.getBrand(),
+                        goodToy.getAge(),
+                        goodToy.getCategory()));
+            }
+
+            // Escribir encabezado para juguetes malos
+            writer.write("Tipo,Nombre,Contenido\n");
+
+            
+            //Escribir juguetes malos
+            for (BadToy badToy : badToys) {
+                writer.write(String.format("Malo,%s,%s\n",
+                        badToy.getTitle(),
+                        badToy.getContent()));
+            }
+
+            System.out.println("Archivo CSV guardado correctamente en: " + filePath);
+
+        } catch (IOException e) {
+            System.err.println("Error al guardar el archivo CSV: " + e.getMessage());
+        }
+      
+
 
     }
 

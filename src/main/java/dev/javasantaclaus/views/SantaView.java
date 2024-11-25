@@ -31,7 +31,7 @@ public class SantaView extends View {
                                         break;
                                 case 3:
 
-                                        System.out.println("3. Guardar lista de todos los juguetes (.csv)s");
+                                        saveAllToyCSV();
                                         break;
                                 case 4:
                                         
@@ -69,7 +69,14 @@ public class SantaView extends View {
 
         }
 
-         
+        
+        
+        public static void saveAllToyCSV(){
+                System.out.println("Guardando en CSV");
+               
+                controller.saveCSV();
+        }
+
         public static void closeSession() {
                 System.out.println("*********************************************");
                 System.out.println("********** Sesión Santa cerrada *************");

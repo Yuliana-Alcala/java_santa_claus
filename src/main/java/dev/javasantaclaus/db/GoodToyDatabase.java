@@ -39,4 +39,9 @@ public class GoodToyDatabase implements IDatabase<GoodToy> {
         
     }
 
+    public void saveAllToyCSV(List<GoodToy> goodToys){
+
+    }
+
+
 }
