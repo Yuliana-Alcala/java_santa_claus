@@ -140,18 +140,26 @@ public class ElfoView extends View {
 
 
     public static void deleteToy() {
+        boolean found = false;
         //mostrar las 2 listas
         System.out.println("***********************************");
         System.out.println("Ingrese el identificador a eliminar");
         String id = scanner.next();
         if(id.contains("B")) {
-            controller.deleteGoodToy(id);
+            found = controller.deleteGoodToy(id);
 
         }            
         else{
-            controller.deleteBadToy(id);
+           
+            found = controller.deleteBadToy(id);
         }
-            
+           
+        if (found==true){
+            System.out.println("Juguete eliminado");
+        }
+        else{
+            System.out.println("Juguete no encontrado");
+        }
         
     }
 

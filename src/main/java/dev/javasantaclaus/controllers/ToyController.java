@@ -64,23 +64,26 @@ public class ToyController {
         ElfoView.displayToys(goodToys, badToys);
     }
    
-    public void deleteGoodToy(String id) {
+    public boolean deleteGoodToy(String id) {
         
-        //repository.setDB("good_toy");
-        repository.deleteGoodToy(id);
+        repository.setDB("good_toy");
+        boolean found = repository.deleteGoodToy(id);
+        return found;
+
             
     }
 
-    public void deleteBadToy(String id) {
+    public boolean deleteBadToy(String id) {
         repository.setDB("bad_toy");
-        repository.deleteBadToy(id);
+        
+        boolean found = repository.deleteBadToy(id);
+        return found;
         
     }
 
     public void saveCSV(){
        
         repository.saveCSV();
-
     }
    
 

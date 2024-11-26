@@ -53,32 +53,45 @@ public class ToyRepository {
 
     }
 
-    public void deleteGoodToy(String id) {
+    @SuppressWarnings("unchecked")
+    public boolean deleteGoodToy(String id) {
 
-        List<GoodToy> goodToys = getGoodToys();
-        /*
-         * System.out.println("Contenido de la lista de GoodToys:");
-         * for (int i = 0; i < goodToys.size(); i++) {
-         * System.out.println(goodToys.get(i));
-         * }
-         */
+        List<GoodToy> goodToys = getGoodToys(); 
+        boolean found = false;       
 
         for (GoodToy toy : goodToys) {
-            System.out.println("Comparando ID recibido: " + id + " con ID del juguete: " + toy.getId());
-
-            if (toy.getId() == id) {
-                System.out.println("¡Encontrado!");
-
-                // db.delete(toy);
-                // System.out.println("El juguete con ID " + id + " ha sido eliminado.");
-                // return;
+            if (toy.getId() != null && toy.getId().equals(id)) {
+                found = true;
+                db.delete(toy);
+                break;
             } else {
-                System.out.println("No encontrado");
+                found = false;
+                
             }
         }
-
+        return found;
     }
 
+    @SuppressWarnings("unchecked")
+    public boolean deleteBadToy(String id) {
+
+        List<BadToy> badToys = getBadToys(); 
+        boolean found = false;       
+
+        for (BadToy toy : badToys) {
+            
+            if (toy.getId() != null && toy.getId().equals(id)) {
+                found = true;
+                db.delete(toy);
+                break;
+            } else {
+                found = false;
+                
+            }
+        }
+        
+        return found;
+    }
 
 
     public void saveCSV(){
@@ -115,13 +128,6 @@ public class ToyRepository {
         }
     }
 
-    @SuppressWarnings("unchecked")
-    public void deleteBadToy(String id) {
-        List<BadToy> toys = db.geToys();
-        for (BadToy toy : toys) {
-            if (toy.getId() == id)
-                db.delete(toys);
-        }
-    }
+
 
 }
