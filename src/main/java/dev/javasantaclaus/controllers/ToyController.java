@@ -73,16 +73,17 @@ public class ToyController {
             
     }
 
-    public void deleteBadToy(String id) {
+    public boolean deleteBadToy(String id) {
         repository.setDB("bad_toy");
-        repository.deleteBadToy(id);
+        
+        boolean found = repository.deleteBadToy(id);
+        return found;
         
     }
 
     public void saveCSV(){
        
         repository.saveCSV();
-
     }
    
 

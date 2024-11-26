@@ -150,7 +150,8 @@ public class ElfoView extends View {
 
         }            
         else{
-            controller.deleteBadToy(id);
+           
+            found = controller.deleteBadToy(id);
         }
            
         if (found==true){

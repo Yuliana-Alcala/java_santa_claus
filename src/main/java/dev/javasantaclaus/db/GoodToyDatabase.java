@@ -28,7 +28,6 @@ public class GoodToyDatabase implements IDatabase<GoodToy> {
     }
 
     public void delete(GoodToy toy) {
-        System.out.println("juguete que llego");
         
         goodToys.remove(toy);        
         

@@ -70,9 +70,28 @@ public class ToyRepository {
             }
         }
         return found;
-
     }
 
+    @SuppressWarnings("unchecked")
+    public boolean deleteBadToy(String id) {
+
+        List<BadToy> badToys = getBadToys(); 
+        boolean found = false;       
+
+        for (BadToy toy : badToys) {
+            
+            if (toy.getId() != null && toy.getId().equals(id)) {
+                found = true;
+                db.delete(toy);
+                break;
+            } else {
+                found = false;
+                
+            }
+        }
+        
+        return found;
+    }
 
 
     public void saveCSV(){
@@ -109,13 +128,6 @@ public class ToyRepository {
         }
     }
 
-    @SuppressWarnings("unchecked")
-    public void deleteBadToy(String id) {
-        List<BadToy> toys = db.geToys();
-        for (BadToy toy : toys) {
-            if (toy.getId() == id)
-                db.delete(toys);
-        }
-    }
+
 
 }
