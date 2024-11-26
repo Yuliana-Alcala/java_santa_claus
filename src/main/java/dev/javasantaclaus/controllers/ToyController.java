@@ -64,10 +64,12 @@ public class ToyController {
         ElfoView.displayToys(goodToys, badToys);
     }
    
-    public void deleteGoodToy(String id) {
+    public boolean deleteGoodToy(String id) {
         
-        //repository.setDB("good_toy");
-        repository.deleteGoodToy(id);
+        repository.setDB("good_toy");
+        boolean found = repository.deleteGoodToy(id);
+        return found;
+
             
     }
 
